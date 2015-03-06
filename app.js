@@ -35,19 +35,44 @@ var staff = [
 }
 ];
 
+var collectiveAwesomeness = 0,
+	programmerCount = 0;
+
 var awesomeAverage = function () {
-	var collectiveAwesomeness = 0,
-		programmerCount = 0;
-	for (var i = 0; i < staff.length; i++) {
-		if (staff[i].occupation === 'programmer'){
-			collectiveAwesomeness+=(staff[i].awesomeIndex);
-			programmerCount++; 
+	_.forEach(staff, function(staff) {
+		if (staff.occupation === 'programmer') {
+			collectiveAwesomeness+=(staff.awesomeIndex);
+			programmerCount++;
 		}
-	}
+	});
 	return (collectiveAwesomeness/programmerCount).toFixed(1);
 };
 
 $('#awesome-index').append(awesomeAverage());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
